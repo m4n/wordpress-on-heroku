@@ -64,11 +64,11 @@ server {
 
   # Rewrite herokuapp.com url to stop duplicate content
   # Uncomment and edit as required
-  # if ($host ~* "^yourblog.herokuapp.com$") {
-  #   rewrite ^(.*)$ http://blog.yourdomain.com$1 permanent;
-  #   break;
-  # }
-  
+  if ($host ~* "^feuerwehr-mehringen.herokuapp.com$") {
+      rewrite ^(.*)$ http://feuerwehr.mehringen.de$1 permanent;
+      break;
+  }
+
   # Set a variable to work around the lack of nested conditionals
   set $cache_uri $request_uri;
 
@@ -95,7 +95,7 @@ server {
   add_header      X-Frame-Options SAMEORIGIN;
 
   # X-Powered-By Wordpress on Heroku
-  add_header      X-Powered-By "Wordpress on Heroku http://git.io/SAoKQQ";
+  add_header      X-Powered-By "Something";
 
   location / {
     # wordpress fancy rewrites
