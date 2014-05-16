@@ -64,10 +64,10 @@ server {
 
   # Rewrite herokuapp.com url to stop duplicate content
   # Uncomment and edit as required
-  if ($host ~* "^feuerwehr-mehringen.herokuapp.com$") {
-      rewrite ^(.*)$ http://feuerwehr.mehringen.de$1 permanent;
-      break;
-  }
+  # if ($host ~* "^feuerwehr-mehringen.herokuapp.com$") {
+  #     rewrite ^(.*)$ http://feuerwehr.mehringen.de$1 permanent;
+  #     break;
+  # }
 
   # Set a variable to work around the lack of nested conditionals
   set $cache_uri $request_uri;
